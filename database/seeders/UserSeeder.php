@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
                 'email'             => $faker->unique()->safeEmail(),
                 'email_verified_at' => now(),
                 'password'          => $faker->password(),
+                // 'password'          => bcrypt($faker->password()),
                 'created_at'        => now(),
                 'updated_at'        => now(),
             ];

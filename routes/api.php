@@ -16,4 +16,6 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('/user', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    Route::get('/dataset', [AuthController::class, 'dataset']);
+
 });

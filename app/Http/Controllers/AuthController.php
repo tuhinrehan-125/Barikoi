@@ -46,4 +46,8 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Successfully logged out']);
     }
+
+    public function dataset() {
+        return User::all();
+    }
 }

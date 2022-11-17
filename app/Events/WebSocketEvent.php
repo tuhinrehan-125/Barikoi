@@ -12,11 +12,11 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use App\Models\User;
 
-class WebSocketEvent
+class WebSocketEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    protected $users_data;
+    public $users_data;
 
     /**
      * Create a new event instance.
@@ -35,6 +35,6 @@ class WebSocketEvent
      */
     public function broadcastOn()
     {
-        return new PublicChannel('channel-name');
+        return new Channel('data-set');
     }
 }
